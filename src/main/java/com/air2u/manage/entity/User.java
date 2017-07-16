@@ -1,11 +1,17 @@
 package com.air2u.manage.entity;
 
+import java.util.Date;
+
 public class User {
     private Integer id;
 
     private String name;
 
-    private Byte age;
+    private String password;
+
+    private Integer level;
+
+    private Date createtime;
 
     public Integer getId() {
         return id;
@@ -23,11 +29,27 @@ public class User {
         this.name = name == null ? null : name.trim();
     }
 
-    public Byte getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(Byte age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
     }
 }

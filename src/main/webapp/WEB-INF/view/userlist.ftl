@@ -41,7 +41,9 @@
 						<span class="selected"></span>
 						</a>					
 					</li>
-					<li><a class="" href="frontend_theme/index.html" target="_blank"><i class="fa fa-desktop fa-fw"></i> <span class="menu-text">Frontend Theme</span></a></li><li><a class="" href="inbox.html"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">Inbox</span></a></li>
+					<li><a class="" href="/air2u-manage/customer/list/"><i class="fa fa-desktop fa-fw"></i> 
+						<span class="menu-text">客户信息管理</span></a></li>
+					<li><a class="" href="inbox.html"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">Inbox</span></a></li>
 					<li><a class="" href="widgets_box.html"><i class="fa fa-th-large fa-fw"></i> <span class="menu-text">Widgets & Box</span></a></li>
 					<li><a class="" href="gallery.html"><i class="fa fa-picture-o fa-fw"></i> <span class="menu-text">Gallery</span></a></li>
 				</ul>
@@ -78,11 +80,11 @@
 									<div class="col-sm-9 pull-right" style="text-align:right;">
 										<form class="form-inline" role="form">
 											  <div class="form-group">
-												<label class="sr-only" for="exampleInputEmail2">Email address</label>
+												<label class="" for="">Email address</label>
 												<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
 											  </div>
 											  <div class="form-group">
-												<label class="sr-only" for="exampleInputPassword2">Password</label>
+												<label class="" for="">Password</label>
 												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
 											  </div>
 											  <button type="submit" class="btn btn-primary">查询</button>

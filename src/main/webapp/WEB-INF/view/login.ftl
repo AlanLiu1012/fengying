@@ -8,10 +8,7 @@
 
 <#include "/fragments/layout.ftl"/>
 
-<style type="text/css">
-	body { background: url(air2u-manage/resources/static_/img/bg-login.jpg) !important; }
-</style>
-		
+
 <script>
   $(document).ready(function() {
  	$('#loginForm').bootstrapValidator({
@@ -40,7 +37,7 @@
          }
       }).on('success.form.bv', function(e) { //点击提交之后
         	$("#loginForm").data('bootstrapValidator').destroy();
-            $("#loginForm").attr("action","/air2u-manage/user/user_login/");
+            $("#loginForm").attr("action","/manage/user/user_login/");
             $("#loginForm").submit();
     });
 
