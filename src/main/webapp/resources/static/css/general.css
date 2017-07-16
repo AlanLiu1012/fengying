@@ -1,0 +1,237 @@
+.paddingTop20 {
+	padding-top: 20px;
+}
+
+.paddingTop30 {
+	padding-top: 30px;
+}
+
+.paddingTop15 {
+	padding-top: 18px;
+}
+
+.paddingTop25 {
+	padding-top: 25px;
+}
+
+.paddingBottom20 {
+	padding-bottom: 20px;
+}
+
+.cursorPointer{
+	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog-or {
+    width: 600px;
+    margin: 200px auto;
+  }
+}
+
+.errorTip {
+	color: #a94442;
+	font-size: 12px;
+}
+
+.errorTip4RulePoint {
+	color: #a94442;
+	font-size: 14px;
+}
+
+.displayNone {
+	display: none;
+}
+
+.displayBlock {
+	display: block;
+}
+
+.required-star-tip{
+	color: #a94442;
+	padding-left: 5px;
+}
+
+.alertWarnningColor{
+	color: #286090;
+}
+
+.topNavigationBG{
+	background-color: #286090;
+	  min-width: 1450px;
+}
+
+.topNavigationBG .topMenuBG .topmenA{
+	color: #fff;
+}
+
+.topNavigationBG .topMenuBG .topmenA:hover,
+.topNavigationBG .topMenuBG .topmenA:focus {
+  color: #286090;
+  background-color: #c1e2b3;
+  
+
+}
+
+.datePickerStyles{
+	position: relative !important;
+}
+
+#page-wrapper-balance {
+  padding: 0 15px;
+  min-height: 568px;
+  background-color: white;
+}
+@media (min-width: 768px) {
+  #page-wrapper-balance {
+    position: inherit;
+    margin: 0 250px 0 250px;
+    padding: 0 30px;
+    border-left: 1px solid #e7e7e7;
+  }
+}
+
+.notReadBg{
+	background-color: #5cb85c!important;
+}
+
+.textalign{
+	text-align: center;
+}
+
+/**Product and Category CSS**/
+
+@media (min-width: 1024px) {
+  .modal-dialog-product {
+    width: 800px;
+    margin: 100px auto;
+  }
+}
+.form-group-product {
+    margin-bottom: 5px !important;
+}
+.product-btn {
+	margin:0px 20px 0px 0px;
+}
+
+.form-content-product {
+	margin:0px 20px 0px 20px;
+}
+
+@media (min-width: 1024px) {
+  .modal-dialog-tree {
+    width: 300px;
+    margin: 200px auto;
+  }
+}
+
+.warning-info-text{
+	text-align:center;
+	padding: 25px !important;
+}
+
+.category-btn {
+	margin:0px 20px 0px 0px;
+}
+
+.form-content-category{
+	margin:0px 20px 0px 20px;
+} 
+/**Product CSS**/
+
+/**Left nav CSS**/
+.side-menu-hidden{
+	display:none;
+}
+
+.side-menu-show{ 
+}
+
+
+.btn-orange{
+	background-color: #e0c389;
+/*     border-color: #F7E7CE; */
+    color: #fff;
+}
+
+.btn-orange:HOVER{
+	background-color: #fbd2b2;
+    border-color: #F7E7CE;
+    color: #fff;
+}
+
+.btn-orange:active:hover, .btn-orange.active:hover, .open > .dropdown-toggle.btn-orange:hover, .btn-orange:active:focus, .btn-orange.active:focus, .open > .dropdown-toggle.btn-orange:focus, .btn-orange.focus:active, .btn-orange.active.focus, .open > .dropdown-toggle.btn-orange.focus {
+    background-color: #e0c389;
+    border-color: #F7E7CE;
+    color: #fff;
+}
+
+.btn-orange:focus, .btn-orange.focus {
+    background-color: #e0c389;
+    border-color: #F7E7CE;
+    color: #fff;
+}
+
+.page-header{
+	color:#286090;
+}
+
+/* .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #e0c389;
+    border-color: #e0c389;
+    color: #fff;
+    cursor: default;
+    z-index: 3;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    background-color: #fff;
+    border-color: #ddd;
+    color: #e0c389;
+    cursor: not-allowed;
+} */
+
+/* tax rate CSS**/
+.errorTip-tax {
+    color: #a94442;
+    font-size: 12px;
+    margin-bottom: 12px;
+} 
+
+.input-tax {
+ text-align: right;
+ }
+.cancel-btn {
+ 	margin-left: 12px
+ }
+ .minWidth150{
+ 	min-width:150px;
+ }
+ 
+/* tax rate CSS*/
+
+
+.panel .panel-default{
+	min-width: 1000px !important;
+}
+
+.customer-user-list{
+	max-height:200px;
+	OVERFLOW: auto; 
+	width:100%;
+	margin-top: -1px;
+}
+
+.li-cs{
+	padding-top: 1px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+}
+
+.high-light {
+	background-color: #E6E6E6;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
