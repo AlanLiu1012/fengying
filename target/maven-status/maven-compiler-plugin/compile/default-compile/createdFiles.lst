@@ -1,0 +1,9 @@
+com\air2u\manage\model\UserLoginModel.class
+com\air2u\manage\dao\UserMapper.class
+com\air2u\manage\entity\User.class
+com\air2u\manage\entity\UserExample.class
+com\air2u\manage\controller\UserController.class
+com\air2u\manage\entity\UserExample$GeneratedCriteria.class
+com\air2u\manage\service\UserService.class
+com\air2u\manage\entity\UserExample$Criteria.class
+com\air2u\manage\entity\UserExample$Criterion.class
