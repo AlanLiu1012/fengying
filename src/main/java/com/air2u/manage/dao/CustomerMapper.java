@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.air2u.manage.condition.CustomerCondition;
 import com.air2u.manage.entity.Customer;
+import com.air2u.manage.entity.Page;
 
 public interface CustomerMapper {
     int deleteByPrimaryKey(Integer id);
@@ -18,5 +19,5 @@ public interface CustomerMapper {
 
     int updateByPrimaryKey(Customer record);
     
-    List<Customer> selectAll(CustomerCondition condition);
+    Page<Customer> selectAll(CustomerCondition condition);
 }

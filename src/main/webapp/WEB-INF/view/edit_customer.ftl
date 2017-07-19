@@ -58,13 +58,13 @@
          }
       }).on('success.form.bv', function(e) { //点击提交之后
         	$("#customerForm").data('bootstrapValidator').destroy();
-            $("#customerForm").attr("action","/manage/customer/addCustomer/");
+            $("#customerForm").attr("action","/manage/customer/editCustomer/");
             $("#customerForm").submit();
     });
 
  
-     $('.btn-login').click(function(){
-         $('#loginForm').bootstrapValidator('validate');
+     $('.btn-submit').click(function(){
+         $('#customerForm').bootstrapValidator('validate');
      });
     });
 </script>
@@ -123,7 +123,7 @@
 										<li>客户信息管理</li>
 									</ul>
 									<div class="clearfix">
-										<h3 class="content-title pull-left">添加客户信息</h3>
+										<h3 class="content-title pull-left">编辑客户信息</h3>
 									</div>
 								</div>
 							</div>
@@ -132,7 +132,7 @@
 							<div class="col-md-10 col-md-offset-1">
 								<div class="box border blue">
 									<div class="box-title">
-										<h4><i class="fa fa-bars"></i> <span class="hidden-inline-mobile">添加</span></h4>
+										<h4><i class="fa fa-bars"></i> <span class="hidden-inline-mobile">编辑</span></h4>
 									</div>
 									<div class="box-body">
 										<h3 class="form-title"></h3>
@@ -140,37 +140,38 @@
 											  <div class="form-group">
 												<label for="inputName" class="col-sm-2 control-label">客户姓名 <span style="color:red;">*</span></label>
 												<div class="col-sm-8">
-												  <input type="text" class="form-control" id="inputName" name="inputName" placeholder="客户名">
+												 <input type="hidden" class="form-control" id="inputId" name="inputId" value="${customer.id}">
+												  <input type="text" class="form-control" id="inputName" name="inputName" placeholder="客户名" value="${customer.customerName}">
 												</div>
 											  </div>
 											  <div class="form-group">
 												<label for="inputCustomerCode" class="col-sm-2 control-label">客户编号 <span style="color:red;">*</span></label>
 												<div class="col-sm-8">
-												  <input type="text" class="form-control" id="inputCustomerCode" name="inputCustomerCode"  placeholder="客户代号">
+												  <input type="text" class="form-control" id="inputCustomerCode" name="inputCustomerCode"  placeholder="客户代号" value="${customer.customerCodename}">
 												</div>
 											  </div>
 											  <div class="form-group">
 												<label for="inputTel" class="col-sm-2 control-label">联系电话 <span style="color:red;">*</span></label>
 												<div class="col-sm-8">
-												  <input type="number" class="form-control" id="inputTel" name="inputTel" placeholder="联系电话">
+												  <input type="number" class="form-control" id="inputTel" name="inputTel" placeholder="联系电话" value="${customer.tel}">
 												</div>
 											  </div>
 											  <div class="form-group">
 												<label for="inputEmail" class="col-sm-2 control-label">联系邮箱 <span style="color:red;">*</span></label>
 												<div class="col-sm-8">
-												  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="邮箱">
+												  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="邮箱" value="${customer.email}">
 												</div>
 											  </div>
 											  <div class="form-group">
 												<label for="inputAddress" class="col-sm-2 control-label">居住地址 <span style="color:red;">*</span></label>
 												<div class="col-sm-8">
-												  <textarea class="form-control" id="inputAddress" name="inputAddress" placeholder="地址"></textarea>
+												  <textarea class="form-control" id="inputAddress" name="inputAddress" placeholder="地址">${customer.address}</textarea>
 												</div>
 											  </div>
 											  <div class="form-group">
 												<div class="col-sm-offset-4 col-sm-8">
 												  <a href="/manage/customer/list/" class="btn btn-default">取消</a>
-												  <button class="btn btn-primary btn-login">录入</button>
+												  <button class="btn btn-primary btn-submit">编辑</button>
 												</div>
 											  </div>
 											</form>

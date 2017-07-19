@@ -19,14 +19,28 @@ public class CustomerService {
     @Autowired
     private CustomerMapper customerMapper;
 
-   /* @Transactional
-    public int add(User user){
-        int result = userMapper.insertSelective(user);
+    @Transactional
+    public Integer addCustomer(Customer customer){
+    	Integer result = customerMapper.insertSelective(customer);
         return result;
     }
-*/
+
+    
     public List<Customer> selectAll(CustomerCondition condition){
-        List<Customer> customers = customerMapper.selectAll(condition);
+    	PageHelper.startPage(condition.getPage(), condition.getSize());
+    	
+    	List<Customer> customers = customerMapper.selectAll(condition);
         return customers;
+    }
+    
+    public Customer selectByPrimaryKey(Integer id){
+        Customer customer = customerMapper.selectByPrimaryKey(id);
+        return customer;
+    }
+
+    @Transactional
+    public Integer editCustomer(Customer customer){
+    	Integer result = customerMapper.updateByPrimaryKey(customer);
+        return result;
     }
 }

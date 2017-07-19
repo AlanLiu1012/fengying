@@ -6455,7 +6455,7 @@ fieldset[disabled] .btn-yellow.active {
   color: #666666;
   display: block;
   font-family: 'Open Sans';
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 300;
   letter-spacing: -1px;
   margin: 5px 0;
@@ -8996,4 +8996,8 @@ ul.stats li small {
 /* WELL BOTTOM */
 .well.well-bottom {
   border-radius: 0 0 4px 4px;
+}
+
+.set-middle{
+	vertical-align: middle;
 }

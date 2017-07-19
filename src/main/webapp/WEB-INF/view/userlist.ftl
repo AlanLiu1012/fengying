@@ -41,7 +41,7 @@
 						<span class="selected"></span>
 						</a>					
 					</li>
-					<li><a class="" href="/air2u-manage/customer/list/"><i class="fa fa-desktop fa-fw"></i> 
+					<li><a class="" href="/manage/customer/list/"><i class="fa fa-desktop fa-fw"></i> 
 						<span class="menu-text">客户信息管理</span></a></li>
 					<li><a class="" href="inbox.html"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">Inbox</span></a></li>
 					<li><a class="" href="widgets_box.html"><i class="fa fa-th-large fa-fw"></i> <span class="menu-text">Widgets & Box</span></a></li>

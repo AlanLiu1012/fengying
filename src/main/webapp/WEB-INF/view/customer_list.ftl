@@ -75,10 +75,10 @@
 							<div class="col-md-12">
 								<div class="row">
 									<div class="col-sm-3">
-										<a href="/air2u-manage/customer/add_customer/" class="btn btn-success">新增客户信息</a>
+										<a href="/manage/customer/add_customer/" class="btn btn-success">新增客户信息</a>
 									</div>
 									<div class="col-sm-9 pull-right" style="text-align:right;">
-										<form class="form-inline" role="form" method="GET" action="/air2u-manage/customer/list/">
+										<form class="form-inline" role="form" method="GET" action="/manage/customer/list/">
 											  <div class="form-group">
 												<label class="sr-only" for="exampleInputEmail2">客户姓名</label>
 												<input type="text" class="form-control" id="name" name="name" placeholder="请输入客户姓名">
@@ -105,65 +105,65 @@
 												<table class="table table-striped table-bordered table-hover">
 													 <thead>
 														<tr>
-														   <th>#</th>
-														   <th>客户姓名</th>
-														   <th>客户编号</th>
-														   <th>联系方式</th>
-														   <th>联系邮箱</th>
-														   <th>居住地址</th>
-														   <th>创建时间</th>
-														   <th>操作</th>
+														   <td>#</td>
+														   <td>客户姓名</td>
+														   <td>客户编号</td>
+														   <td>联系方式</td>
+														   <td>联系邮箱</td>
+														   <td>居住地址</td>
+														   <td>创建时间</td>
+														   <td>操作</td>
 														</tr>
 													 </thead>
 													 <tbody>
 														 <#list list as customer>
 														    <tr>
-														    	<td>${customer_index +1}</td>
-														        <td>
+														    	<td class="set-middle">${customer_index +1}</td>
+														        <td class="set-middle">
 																	<#if customer.customerName??>
 																		${customer.customerName}
 																	<#else>
 																		--
 																	</#if>
 																</td>
-																<td>
+																<td class="set-middle">
 																	<#if customer.customerCodename??>
 																		${customer.customerCodename}
 																	<#else>
 																		--
 																	</#if>
 																</td>
-														        <td>
+														        <td class="set-middle">
 																	<#if customer.tel??>
 																		${customer.tel}
 																	<#else>
 																		--
 																	</#if>										
 																</td>
-														        <td>
+														        <td class="set-middle">
 																	<#if customer.email??>
 																		${customer.email}
 																	<#else>
 																		--
 																	</#if>	
 																</td>
-														        <td>
+														        <td class="set-middle">
 																	<#if customer.address??>
 																		${customer.address}
 																	<#else>
 																		--
 																	</#if>	
 																</td>
-														        <td>
+														        <td class="set-middle">
 																	<#if customer.createtime??>
 																		${customer.createtime?string("yyyy-MM-dd HH:mm:ss")}
 																	<#else>
 																		--
 																	</#if>	
 																</td>
-														        <td>
-														        	<a href="" class="btn btn-danger">编辑</a>
-														        	<a href="" class="btn btn-warning">删除</a>
+														        <td class="set-middle">
+														        	<a href="/manage/customer/edit_customer/${customer.id}" class="btn btn-danger">编辑</a>
+														        	<a data-toggle="modal" data-target="#myModal" class="btn btn-warning">删除</a>
 														        </td>
 														    </tr>
 														</#list>
@@ -200,6 +200,44 @@
 			</div>
 		</div>
 	</section>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  	删除确认
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="customerForm" method="post">
+				  <div class="form-group">
+					<label for="inputName" class="col-sm-3 control-label">客户姓名 </label>
+					<div class="col-sm-8">
+					  <input type="text" style="background: lightgray;" class="form-control" id="inputName" name="inputName" placeholder="客户名">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCustomerCode" class="col-sm-3 control-label">客户编号</label>
+					<div class="col-sm-8">
+					  <input type="text" style="background: lightgray;"  class="form-control" id="inputCustomerCode" name="inputCustomerCode"  placeholder="客户代号">
+					</div>
+				  </div>
+				</form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">删除</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 
 </body>
 
