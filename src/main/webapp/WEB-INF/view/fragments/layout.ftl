@@ -18,6 +18,8 @@
  
 <link href="<@spring.url '/resources/static2/bootstrapValidator/bootstrapValidator.min.css' />"  rel="stylesheet" type="text/css">
  
+<link href="<@spring.url '/resources/static2/css/style.css' />"  rel="stylesheet" type="text/css">
+ 
 
  
 <script src="<@spring.url '/resources/static2/js/jquery/jquery-2.0.3.min.js'/>" ></script>

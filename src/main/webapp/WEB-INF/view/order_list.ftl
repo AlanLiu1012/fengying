@@ -79,37 +79,46 @@
 									</div>
 									<div class="col-sm-9 pull-right" style="text-align:right;">
 										<form class="form-inline" role="form" method="GET" action="/manage/order/list/">
-											  <div class="form-group">
-													<label class="sr-only" for="exampleInputEmail2">机器编号</label>
-													<input type="text" class="form-control" id="name" name="name" placeholder="请输入机器编号">
-											  </div>
-											  <div class="form-group">
-													<label class="sr-only" for="exampleInputPassword2">色号</label>
-													<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入色号">
-											  </div>
-											  <div class="form-group">
-													<label class="sr-only" for="exampleInputPassword2">代号</label>
-													<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入代号">
-											  </div>
-											  <div class="form-group">
-													<label class="sr-only" for="exampleInputPassword2">批号</label>
-													<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入批号">
-											  </div>
-											  <div class="row" style="margin-top: 15px;margin-right: 0px;">
-											  	   <div class="form-group">
-														<label class="sr-only" for="exampleInputPassword2">客户</label>
-														<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入客户">
-												   </div>
-											  	   <div class="form-group">
-														<label class="sr-only" for="exampleInputPassword2">原料</label>
-														<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入原料">
-												   </div>
-												   <div class="form-group">
-														<label class="sr-only" for="exampleInputPassword2">包装</label>
-														<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入包装">
-												   </div>
-												   <button type="submit" class="btn btn-primary">查询</button>
-											  </div>
+										  <div class="form-group">
+												<label class="sr-only" for="exampleInputEmail2">机器编号</label>
+												<input type="text" class="form-control" id="machineNumber" name="machineNumber"
+													 value="<#if condition.machineNumber??>${condition.machineNumber}</#if>"
+														placeholder="请输入机器编号">
+										  </div>
+										  <div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">色号</label>
+												<input type="text" class="form-control" id="colorNumber" name="colorNumber"
+													value="<#if condition.colorNumber??>${condition.colorNumber}</#if>" placeholder="请输入色号">
+													
+										  </div>
+										  <div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">代号</label>
+												<input type="text" class="form-control" id="codeNumber" name="codeNumber" 
+													value="<#if condition.codeNumber??>${condition.codeNumber}</#if>" placeholder="请输入代号">
+										  </div>
+										  <div class="form-group">
+												<label class="sr-only" for="exampleInputPassword2">批号</label>
+												<input type="text" class="form-control" id="batchNumber" name="batchNumber" 
+													value="<#if condition.batchNumber??>${condition.batchNumber}</#if>" placeholder="请输入批号">
+										  </div>
+										  <div class="row" style="margin-top: 15px;margin-right: 0px;">
+										  	   <div class="form-group">
+													<label class="sr-only" for="exampleInputPassword2">客户</label>
+													<input type="text" class="form-control" id="customer" name="customer" 
+														value="<#if condition.customer??>${condition.customer}</#if>" placeholder="请输入客户">
+											   </div>
+										  	   <div class="form-group">
+													<label class="sr-only" for="exampleInputPassword2">原料</label>
+													<input type="text" class="form-control" id="material" name="material" 
+														value="<#if condition.material??>${condition.material}</#if>" placeholder="请输入原料">
+											   </div>
+											   <div class="form-group">
+													<label class="sr-only" for="exampleInputPassword2">包装</label>
+													<input type="text" class="form-control" id="package2" name="package2" 
+														value="<#if condition.package2??>${condition.package2}</#if>" placeholder="请输入包装">
+											   </div>
+											   <button type="submit" class="btn btn-primary">查询</button>
+										  </div>
 										</form>
 									</div>
 								</div>

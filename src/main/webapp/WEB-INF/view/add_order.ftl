@@ -81,9 +81,26 @@
              }
          }
       }).on('success.form.bv', function(e) { //点击提交之后
-        	$("#orderForm").data('bootstrapValidator').destroy();
-            $("#orderForm").attr("action","/manage/order/addOrder/");
-            $("#orderForm").submit();
+        	
+            $("#btn-login").attr('disabled', "true");
+            $.post("/manage/order/addOrder/", $("#orderForm").serialize())
+                .success(function (data) {
+                	if (data.code == '0') {
+                        $('#successModal').modal('show');
+                        $('#successModal').find('.operate-tip').html("新增生产单操作成功！");
+                    } else {
+                        $("#btn-login").removeAttr("disabled");
+                        $('#failureModal').modal('show');
+                        $('#failureModal').find('.operate-tip').html("新增生产单操作失败！");
+                        return false;
+                    }
+                })
+                .error(function () {
+                    $('#failureModal').modal('show');
+                    $('#failureModal').find('.operate-tip').html("不可预知的异常，无法提交请求！");
+                    return false;
+                });
+                    
     });
 
  
@@ -250,6 +267,42 @@
 		</div>
 	</section>
 
+	<div class="modal fade" id="successModal" data-backdrop="static" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog-or">
+                <div class="modal-content panel-success">
+                    <div class="modal-header">
+                        <h4 id="myModalLabel" contenteditable="true">操作提示</h4>
+                    </div>
+                    <div class="modal-body warning-info-text">
+                        <i class="fa fa-check success-icon"></i>
+                        &nbsp;<span class="operate-tip"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/manage/order/list" class="btn btn-primary">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="failureModal" data-backdrop="static" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog-or">
+                <div class="modal-content panel-success">
+                    <div class="modal-header">
+                        <h4 id="myModalLabel" contenteditable="true">操作提示</h4>
+                    </div>
+                    <div class="modal-body warning-info-text">
+                        <i class="fa fa-times failure-icon"></i>
+                        &nbsp;<span class="operate-tip"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/manage/order/list" class="btn btn-primary">确定</a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        
 </body>
 
 </html>
