@@ -42,8 +42,8 @@ public class OrderService {
     }
 
     @Transactional
-    public Integer editCustomer(Order order){
-    	Integer result = orderMapper.updateByPrimaryKey(order);
+    public Integer editOrder(Order order){
+    	Integer result = orderMapper.updateByPrimaryKeySelective(order);
         return result;
     }
 }

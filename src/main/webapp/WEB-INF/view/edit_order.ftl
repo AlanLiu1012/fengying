@@ -83,15 +83,15 @@
       }).on('success.form.bv', function(e) { //点击提交之后
         	
             $("#btn-login").attr('disabled', "true");
-            $.post("/manage/order/addOrder/", $("#orderForm").serialize())
+            $.post("/manage/order/editOrder/", $("#orderForm").serialize())
                 .success(function (data) {
                 	if (data.code == '0') {
                         $('#successModal').modal('show');
-                        $('#successModal').find('.operate-tip').html("新增生产单操作成功！");
+                        $('#successModal').find('.operate-tip').html("编辑生产单操作成功！");
                     } else {
                         $("#btn-login").removeAttr("disabled");
                         $('#failureModal').modal('show');
-                        $('#failureModal').find('.operate-tip').html("新增生产单操作失败！");
+                        $('#failureModal').find('.operate-tip').html("编辑生产单操作失败！");
                         return false;
                     }
                 })
@@ -179,15 +179,19 @@
 										<h3 class="form-title"></h3>
 											<form class="form-horizontal" role="form" id="orderForm" method="post">
 											  <div class="row">
+											 	 <input type="hidden" class="form-control" id="id" name="id"
+														  	value="<#if order.id??>${order.id}</#if>">
 											  	 <div class="form-group">
 														<label for="inputName" class="col-sm-1 col-sm-offset-1 control-label">机器编号 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="machineNumber" name="machineNumber" placeholder="机器编号">
+														  <input type="text" class="form-control" id="machineNumber" name="machineNumber"
+														  	value="<#if order.machineNumber??>${order.machineNumber}</#if>"  placeholder="机器编号">
 														</div>
 														
 														<label for="inputName" class="col-sm-1 control-label">色号 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="colorNumber" name="colorNumber" placeholder="色号">
+														  <input type="text" class="form-control" id="colorNumber" name="colorNumber" 
+														  	value="<#if order.colorNumber??>${order.colorNumber}</#if>" placeholder="色号">
 														</div>
 												  </div>
 											  </div>
@@ -196,12 +200,14 @@
 											  	 <div class="form-group">
 														<label for="inputName" class="col-sm-1 col-sm-offset-1 control-label">代号 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="codeNumber" name="codeNumber" placeholder="代号">
+														  <input type="text" class="form-control" id="codeNumber" name="codeNumber"
+														  	value="<#if order.codeNumber??>${order.codeNumber}</#if>" placeholder="代号">
 														</div>
 														
 														<label for="inputName" class="col-sm-1 control-label">批号 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="batchNumber" name="batchNumber" placeholder="批号">
+														  <input type="text" class="form-control" id="batchNumber" name="batchNumber"
+														  	value="<#if order.batchNumber??>${order.batchNumber}</#if>" placeholder="批号">
 														</div>
 												  </div>
 											  </div>
@@ -210,12 +216,14 @@
 											  	 <div class="form-group">
 														<label for="inputName" class="col-sm-1 col-sm-offset-1 control-label">原料 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="material" name="material" placeholder="原料">
+														  <input type="text" class="form-control" id="material" name="material" 
+														  	value="<#if order.material??>${order.material}</#if>" placeholder="原料">
 														</div>
 														
 														<label for="inputName" class="col-sm-1 control-label">数量 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="number" name="number" placeholder="数量">
+														  <input type="text" class="form-control" id="number" name="number" 
+														  	value="<#if order.number??>${order.number}</#if>" placeholder="数量">
 														</div>
 												  </div>
 											  </div>
@@ -224,12 +232,14 @@
 											  	 <div class="form-group">
 														<label for="inputName" class="col-sm-1 col-sm-offset-1 control-label">客户 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="customer" name="customer" placeholder="客户名">
+														  <input type="text" class="form-control" id="customer" name="customer"
+														  	value="<#if order.customer??>${order.customer}</#if>"  placeholder="客户名">
 														</div>
 														
 														<label for="inputName" class="col-sm-1 control-label">包装 <span style="color:red;">*</span></label>
 														<div class="col-sm-4">
-														  <input type="text" class="form-control" id="package2" name="package2" placeholder="包装">
+														  <input type="text" class="form-control" id="package2" name="package2"
+														  	value="<#if order.package2??>${order.package2}</#if>"   placeholder="包装">
 														</div>
 												  </div>
 											  </div>
@@ -238,7 +248,9 @@
 											  	 <div class="form-group">
 														<label for="inputAddress" class="col-sm-1 col-sm-offset-1 control-label">备注 <span style="color:red;"></span></label>
 														<div class="col-sm-9">
-														  <textarea class="form-control" id="remark" name="remark" placeholder="备注"></textarea>
+														  <textarea class="form-control" id="remark" name="remark" placeholder="备注">
+														  <#if order.remark??>${order.remark}</#if>
+														  </textarea>
 														</div>
 												  </div>
 											  </div>
@@ -247,7 +259,7 @@
 											  	 <div class="form-group">
 														<div class="col-sm-offset-5">
 															 <a href="/manage/order/list/" class="btn btn-default">取消</a>
-															  <button class="btn btn-primary btn-login">录入</button>
+															  <button class="btn btn-primary btn-login">编辑</button>
 														</div>
 												  </div>
 											  </div>

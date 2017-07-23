@@ -72,26 +72,27 @@ public class OrderController {
 		}
 	}
 
-	@RequestMapping(value = "/edit_customer/{id}", method = RequestMethod.GET)
-	public String edit_customer(@PathVariable("id") Integer id, Model model) {
-		Customer customer = null;
-		/*
-		 * if(id != null){ customer = customerService.selectByPrimaryKey(id); }
-		 * model.addAttribute("customer", customer);
-		 */
-		return "edit_customer";
+	@RequestMapping(value = "/edit_order/{id}", method = RequestMethod.GET)
+	public String edit_order(@PathVariable("id") Integer id, Model model) {
+		Order order = null;
+		if(id != null){ 
+			order = orderService.selectByPrimaryKey(id);
+		}
+		model.addAttribute("order", order);
+		return "edit_order";
 	}
 
-	@RequestMapping(value = "/editCustomer", method = RequestMethod.POST)
-	public ModelAndView editCustomerToDB(@ModelAttribute CustomerModel model, HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView();
-
-		/*
-		 * Customer customer = model.toCustomer(model); Integer result =
-		 * customerService.editCustomer(customer);
-		 */
-		mav.setViewName("redirect:/customer/list");
-		return mav;
+	@RequestMapping(value = "editOrder", method = RequestMethod.POST)
+	@ResponseBody
+	public Result editOrder(@ModelAttribute OrderModel model) {
+		Order order = model.orderFormToOrder(model);
+		order.setId(model.getId());
+		Integer result = orderService.editOrder(order);
+		if (result > 0) {
+			return Result.ok(StatusCode.SUCCESS, "编辑成功！");
+		} else {
+			return Result.ok(StatusCode.ERROR, "编辑失败！");
+		}
 	}
 
 }

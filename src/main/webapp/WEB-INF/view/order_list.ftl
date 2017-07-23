@@ -225,7 +225,7 @@
 																	</#if>	
 																</td>
 														        <td class="set-middle">
-														        	<a href="/manage/customer/edit_customer/${order.id}" class="btn btn-success">编辑</a>
+														        	<a href="/manage/order/edit_order/${order.id}" class="btn btn-success">编辑</a>
 														        	<a data-toggle="modal" data-target="#myModal" class="btn btn-danger">删除</a>
 														        </td>
 														    </tr>
