@@ -45,3 +45,6 @@
 <script src="<@spring.url '/resources/static2/js/script.js'/>" ></script>
 
 <script src="<@spring.url '/resources/static2/bootstrapValidator/bootstrapValidator.min.js'/>" ></script>
+
+
+

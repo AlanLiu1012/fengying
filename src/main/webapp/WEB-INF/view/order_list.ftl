@@ -65,7 +65,7 @@
 										<li>客户信息管理</li>
 									</ul>
 									<div class="clearfix">
-										<h3 class="content-title pull-left">客户信息管理</h3>
+										<h3 class="content-title pull-left">生产单管理</h3>
 									</div>
 									<div class="description">Overview, Statistics and more</div>
 								</div>
@@ -75,19 +75,41 @@
 							<div class="col-md-12">
 								<div class="row">
 									<div class="col-sm-3">
-										<a href="/manage/customer/add_customer/" class="btn btn-success">新增客户信息</a>
+										<a href="/manage/order/add_order/" class="btn btn-success">新增生产单</a>
 									</div>
 									<div class="col-sm-9 pull-right" style="text-align:right;">
-										<form class="form-inline" role="form" method="GET" action="/manage/customer/list/">
+										<form class="form-inline" role="form" method="GET" action="/manage/order/list/">
 											  <div class="form-group">
-												<label class="sr-only" for="exampleInputEmail2">客户姓名</label>
-												<input type="text" class="form-control" id="name" name="name" placeholder="请输入客户姓名">
+													<label class="sr-only" for="exampleInputEmail2">机器编号</label>
+													<input type="text" class="form-control" id="name" name="name" placeholder="请输入机器编号">
 											  </div>
 											  <div class="form-group">
-												<label class="sr-only" for="exampleInputPassword2">联系方式</label>
-												<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入联系方式">
+													<label class="sr-only" for="exampleInputPassword2">色号</label>
+													<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入色号">
 											  </div>
-											  <button type="submit" class="btn btn-primary">查询</button>
+											  <div class="form-group">
+													<label class="sr-only" for="exampleInputPassword2">代号</label>
+													<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入代号">
+											  </div>
+											  <div class="form-group">
+													<label class="sr-only" for="exampleInputPassword2">批号</label>
+													<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入批号">
+											  </div>
+											  <div class="row" style="margin-top: 15px;margin-right: 0px;">
+											  	   <div class="form-group">
+														<label class="sr-only" for="exampleInputPassword2">客户</label>
+														<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入客户">
+												   </div>
+											  	   <div class="form-group">
+														<label class="sr-only" for="exampleInputPassword2">原料</label>
+														<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入原料">
+												   </div>
+												   <div class="form-group">
+														<label class="sr-only" for="exampleInputPassword2">包装</label>
+														<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入包装">
+												   </div>
+												   <button type="submit" class="btn btn-primary">查询</button>
+											  </div>
 										</form>
 									</div>
 								</div>
@@ -97,7 +119,7 @@
 									<div class="col-sm-12">
 										<div class="box border blue">
 										<div class="box-title">
-											<h4><i class="fa fa-bars"></i> <span class="hidden-inline-mobile">客户信息列表</span></h4>
+											<h4><i class="fa fa-bars"></i> <span class="hidden-inline-mobile">生产单列表</span></h4>
 										</div>
 										<div class="box-body">
 											
@@ -106,63 +128,95 @@
 													 <thead>
 														<tr>
 														   <td>#</td>
-														   <td>客户姓名</td>
-														   <td>客户编号</td>
-														   <td>联系方式</td>
-														   <td>联系邮箱</td>
-														   <td>居住地址</td>
+														   <td>机器编号</td>
+														   <td>色号</td>
+														   <td>代号</td>
+														   <td>批号</td>
+														   <td>原料</td>
+														   <td>数量</td>
+														   <td>客户</td>
+														   <td>包装</td>
 														   <td>创建时间</td>
+														   <td>备注</td>
 														   <td>操作</td>
 														</tr>
 													 </thead>
 													 <tbody>
-														 <#list list as customer>
+														 <#list list as order>
 														    <tr>
-														    	<td class="set-middle">${customer_index +1}</td>
+														    	<td class="set-middle">${order_index +1}</td>
 														        <td class="set-middle">
-																	<#if customer.customerName??>
-																		${customer.customerName}
+																	<#if order.machineNumber??>
+																		${order.machineNumber}
 																	<#else>
 																		--
 																	</#if>
 																</td>
 																<td class="set-middle">
-																	<#if customer.customerCodename??>
-																		${customer.customerCodename}
+																	<#if order.colorNumber??>
+																		${order.colorNumber}
 																	<#else>
 																		--
 																	</#if>
 																</td>
 														        <td class="set-middle">
-																	<#if customer.tel??>
-																		${customer.tel}
+																	<#if order.codeNumber??>
+																		${order.codeNumber}
 																	<#else>
 																		--
 																	</#if>										
 																</td>
 														        <td class="set-middle">
-																	<#if customer.email??>
-																		${customer.email}
+																	<#if order.batchNumber??>
+																		${order.batchNumber}
 																	<#else>
 																		--
 																	</#if>	
 																</td>
 														        <td class="set-middle">
-																	<#if customer.address??>
-																		${customer.address}
+																	<#if order.material??>
+																		${order.material}
+																	<#else>
+																		--
+																	</#if>	
+																</td>
+																<td class="set-middle">
+																	<#if order.number??>
+																		${order.number}
+																	<#else>
+																		--
+																	</#if>	
+																</td>
+																<td class="set-middle">
+																	<#if order.customer??>
+																		${order.customer}
+																	<#else>
+																		--
+																	</#if>	
+																</td>
+																<td class="set-middle">
+																	<#if order.package2??>
+																		${order.package2}
 																	<#else>
 																		--
 																	</#if>	
 																</td>
 														        <td class="set-middle">
-																	<#if customer.createtime??>
-																		${customer.createtime?string("yyyy-MM-dd HH:mm:ss")}
+																	<#if order.createtime??>
+																		${order.createtime?string("yyyy-MM-dd HH:mm:ss")}
+																	<#else>
+																		--
+																	</#if>	
+																</td>
+																<td class="set-middle">
+																	<#if order.remark??>
+																		${order.remark}
 																	<#else>
 																		--
 																	</#if>	
 																</td>
 														        <td class="set-middle">
-														        	<a href="/manage/customer/edit_customer/${customer.id}" class="btn btn-success">编辑</a>
+														        	<a href="/manage/customer/edit_customer/${order.id}" class="btn btn-success">编辑</a>
 														        	<a data-toggle="modal" data-target="#myModal" class="btn btn-danger">删除</a>
 														        </td>
 														    </tr>

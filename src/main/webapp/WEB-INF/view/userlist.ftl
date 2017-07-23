@@ -13,7 +13,7 @@
 	<header class="navbar clearfix" id="header">
 		<div class="container">
 			<div class="navbar-brand">
-				<h4 style="color:#FFFFFF;margin-top: -1px;margin-bottom: -5px;">苏州丰盈工程塑胶有限公司</h4>
+				<h4 style="color:#FFFFFF;margin-top: -1px;margin-bottom: -5px;"></h4>
 			</div>
 			<ul class="nav navbar-nav pull-right" style="">
 				<li class="dropdown user" id="header-user">
@@ -43,7 +43,7 @@
 					</li>
 					<li><a class="" href="/manage/customer/list/"><i class="fa fa-desktop fa-fw"></i> 
 						<span class="menu-text">客户信息管理</span></a></li>
-					<li><a class="" href="inbox.html"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">Inbox</span></a></li>
+					<li><a class="" href="/manage/order/list/"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">生产通知单管理</span></a></li>
 					<li><a class="" href="widgets_box.html"><i class="fa fa-th-large fa-fw"></i> <span class="menu-text">Widgets & Box</span></a></li>
 					<li><a class="" href="gallery.html"><i class="fa fa-picture-o fa-fw"></i> <span class="menu-text">Gallery</span></a></li>
 				</ul>

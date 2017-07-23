@@ -72,7 +72,7 @@
       <if test="customer != null" >
         customer,
       </if>
-      <if test="package != null" >
+      <if test="package2 != null" >
         package,
       </if>
       <if test="createtime != null" >
@@ -107,8 +107,8 @@
       <if test="customer != null" >
         #{customer,jdbcType=VARCHAR},
       </if>
-      <if test="package != null" >
-        #{package,jdbcType=VARCHAR},
+      <if test="package2 != null" >
+        #{package2,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null" >
         #{createtime,jdbcType=TIMESTAMP},
@@ -181,4 +181,35 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="com.air2u.manage.condition.OrderCondition">
+    select 
+    <include refid="Base_Column_List" />
+    from p_order
+    <where>
+		<if test="machineNumber != null and machineNumber != ''" >
+	      and machine_number=#{machineNumber}
+	    </if>
+	    <if test="colorNumber != null and colorNumber != ''" >
+	      and color_number=#{colorNumber}
+	    </if>
+	    <if test="codeNumber != null and codeNumber != ''" >
+	      and code_number=#{codeNumber}
+	    </if>
+	    <if test="batchNumber != null and batchNumber != ''" >
+	      and batch_number=#{batchNumber}
+	    </if>
+	    <if test="material != null and material != ''" >
+	      and material=#{material}
+	    </if>
+		<if test="customer != null and customer != ''" >
+	       customer LIKE CONCAT('%',#{customer},'%')
+	    </if>
+	    <if test="package2 != null and package2 != ''" >
+	      and package=#{package2}
+	    </if>
+	</where>
+  </select>
+  
 </mapper>

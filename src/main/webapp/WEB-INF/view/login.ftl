@@ -58,7 +58,7 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4">
 						<div id="logo" style="margin-top:60px;">
-							<h2>苏州丰盈工程塑胶有限公司</h2>
+							<h2></h2>
 						</div>
 					</div>
 				</div>
