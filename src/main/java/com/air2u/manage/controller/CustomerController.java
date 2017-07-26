@@ -7,6 +7,8 @@ import com.air2u.manage.model.CustomerModel;
 import com.air2u.manage.model.UserLoginModel;
 import com.air2u.manage.service.CustomerService;
 import com.air2u.manage.service.UserService;
+import com.github.pagehelper.PageInfo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,15 +36,26 @@ public class CustomerController {
     private CustomerService customerService;
 
     @RequestMapping("/list")
-    public String list(@ModelAttribute CustomerCondition condition, Model model, String language, HttpServletRequest request) {
+    public ModelAndView list(@ModelAttribute CustomerCondition condition, Model model, String language, HttpServletRequest request) {
     	HttpSession session = request.getSession();
-        List<Customer> list = customerService.selectAll(condition);
-        if(!StringUtils.isEmpty(list)){
-        	model.addAttribute("list", list);
-        }else{
-        	model.addAttribute("list", new ArrayList());
-        }
-        return "customer_list";
+    	ModelAndView mav = new ModelAndView();
+    	
+    	PageInfo<Customer> pageInfo = customerService.selectAll(condition);
+    	model.addAttribute("pageInfo", pageInfo);
+        
+        //获得当前页
+        mav.addObject("pageNum", pageInfo.getPageNum());
+        //获得一页显示的条数
+        mav.addObject("pageSize", pageInfo.getPageSize());
+        //是否是第一页
+        mav.addObject("isFirstPage", pageInfo.isIsFirstPage());
+        //获得总页数
+        mav.addObject("totalPages", pageInfo.getPages());
+        //是否是最后一页
+        mav.addObject("isLastPage", pageInfo.isIsLastPage());
+        
+        mav.setViewName("customer_list");
+        return mav;
     }
     
     @RequestMapping(value = "/add_customer", method = RequestMethod.GET)

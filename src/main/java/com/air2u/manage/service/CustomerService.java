@@ -26,11 +26,12 @@ public class CustomerService {
     }
 
     
-    public List<Customer> selectAll(CustomerCondition condition){
-    	PageHelper.startPage(condition.getPage(), condition.getSize());
+    public PageInfo<Customer> selectAll(CustomerCondition condition){
+    	PageHelper.startPage(condition.getPageNum(), condition.getPageSize());
     	
     	List<Customer> customers = customerMapper.selectAll(condition);
-        return customers;
+    	PageInfo<Customer> list = new PageInfo<Customer>(customers);
+        return list;
     }
     
     public Customer selectByPrimaryKey(Integer id){

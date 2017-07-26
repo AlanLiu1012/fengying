@@ -1,22 +1,24 @@
 package com.air2u.manage.condition;
 
 public class BaseCondition {
-	private Integer page;
-    private Integer size;
+	private Integer pageNum;
+    private Integer pageSize;
 
-    public Integer getPage() {
-        return page ==null? 1:page;
-    }
+    
+    public Integer getPageNum() {
+		return pageNum ==null? 1:pageNum;
+	}
 
-    public void setPage(Integer page) {
-        this.page = page;
-    }
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+	}
 
-    public Integer getSize() {
-        return size == null?10:size;
-    }
+	public Integer getPageSize() {
+		return pageSize ==null? 10:pageSize;
+	}
 
-    public void setSize(Integer size) {
-        this.size = size;
-    }
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 }

@@ -30,7 +30,7 @@ public class OrderService {
 
     
     public List<Order> selectAll(OrderCondition condition){
-    	PageHelper.startPage(condition.getPage(), condition.getSize());
+    	PageHelper.startPage(condition.getPageNum(), condition.getPageSize());
     	
     	List<Order> orders = orderMapper.selectAll(condition);
         return orders;
